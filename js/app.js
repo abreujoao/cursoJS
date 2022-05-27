@@ -33,17 +33,17 @@
 
 // imprime o valor digitado como alert 
 // document é tudo que o HTML tem
-var f = document.forms[0];
-f.addEventListener("submit", function(e){
-    alert(f.a.value)
-    return false;
-})
+// var f = document.forms[0];
+// f.addEventListener("submit", function(e){
+//     alert(f.a.value)
+//     return false;
+// })
 
 
-//
-f.addEventListener("keyup", function(e){
-    f.a.value=f.a.value.toUpperCase();
-})
+// //
+// f.addEventListener("keyup", function(e){
+//     f.a.value=f.a.value.toUpperCase();
+// })
 
 
 //------------
@@ -74,35 +74,182 @@ f.addEventListener("keyup", function(e){
 
 // alert(`Meu nome é ${aluno} e tenho 19 anos`)
 
-let post={
-    title:'titulo do valor',
-    except:'excessao do valor',
-    body:'corpo do valor',
-    tags:[
-        'primeira linha',
-        'segunda linha',
-        'terceira linha'
-    ]
+// let post={
+//     title:'titulo do valor',
+//     except:'excessao do valor',
+//     body:'corpo do valor',
+//     tags:[
+//         'primeira linha',
+//         'segunda linha',
+//         'terceira linha'
+//     ]
 
-}
-let {title,except, body, tags} = post;
-var postHtml=` <artile>
-<header>
+// }
+// let {title,except, body, tags} = post;
+// var postHtml=` <artile>
+// <header>
 
-</header>
-<section>
-    <div>${except}</div>
-    <div>${body}</div>
-</section
-<footer>
-    <ul>${tags.map(tag=> `<li>${tag}</li>`).join('\n')}</ul>
-</footer>
-`; // isso imprime o html com as variaveis declaradas
+// </header>
+// <section>
+//     <div>${except}</div>
+//     <div>${body}</div>
+// </section
+// <footer>
+//     <ul>${tags.map(tag=> `<li>${tag}</li>`).join('\n')}</ul>
+// </footer>
+// `; // isso imprime o html com as variaveis declaradas
 
-var div=document.querySelector('div');
+// var div=document.querySelector('div');
 
-div.innerHTML=postHtml;
+// div.innerHTML=postHtml;
 
+//---------------------
 
+//operador de atribuição
+// var nome='João';
+// //nome+='Abreu'; complementa a variavel nome
+// var nome2="Henrique"
 
+// allert(nome)
 
+// alert(nome==nome2) -> compara se tem valores iguais
+
+v1 = 10;
+v2 = 30;
+
+// alert(v1 > v2) // verfica se v1 é maior que v2 
+// alert(v1 < v2) // verifica v1 é menor
+// alert(v1 >= v2) // verifica se v1 é maior ou igual
+// alert(v1 <= v2) // verifica se v1 é menor ou igual
+
+// if e else 
+
+// if (v1){
+//     alert('verdadeiro')
+// }else if (v1 == v2){
+
+// }else{
+//     alert('false')
+// }
+
+// verificação multiplas
+// var destino ='Navegantes';
+// switch (destino) {
+//     case "Navegantes":
+//         alert('o voo vai para navegantes');
+//         break;
+//     case 'São Paulo':
+//         alert('o voo vai para SP');
+//     break;
+//     case 'Curtiba':
+//         alert('o voo vai para Curitiba')
+//         break;
+//     default:
+//         alert('Selecione um destino')
+//         break;
+// }
+
+// laço de repetição 
+
+// primeiro laço
+// for (let index = 0; index <=100; index++) { // vai ate 100 
+//     console.log(index)
+// }
+
+// for (let index = 100; index >=0; index--) { // vai de 100 ate 0
+//     console.log(index)
+// }
+
+// for (let index = 0; index <100; index++) { // vai ate 99
+//     console.log(index)
+// }
+
+// var listaClientes = [
+//     'maria',
+//     'jose',
+//     'vitor',
+//     'henrique'
+// ]
+// SEGUNDO
+// for(clientes in listaClientes){ // clientes recebe o index(posiçao no obejto)
+//     console.log(clientes)
+// }
+
+// for( clientes in listaClientes){
+//     console.log(listaClientes[clientes]) // cliente é uma variavel local 
+// imprime a lista de clientes
+// }
+
+// for( clientes in listaClientes){
+//     console.log(` ${clientes} => ${listaClientes[clientes]}`) // posiçao e o valor
+// }
+
+//TERCEIRO - WHILE - laço condicional ou de repetiçao
+
+// var inc = 0
+// while(inc < 10 ){
+//     console.log(inc);
+//     inc++;
+// }
+
+// // primeiro ele roda depois ele verifica se é verdadeiro
+// do {
+//     console.log(inc);
+//     inc++;
+// } while (inc < 10);
+
+// for (let index = 0; index < listaClientes.length; index++) {
+//     console.log(listaClientes[index])
+
+// }
+
+//------------
+//JQUERY    
+
+//inicializando jquery 
+$(function () {
+    var estados = {
+        '12': 'Acre',
+        '27': 'Alagoas',
+        '16': 'Amapá',
+        '13': 'Amazonas',
+        '29': 'Bahia',
+        '23': 'Ceará',
+        '53': 'Distrito Federal',
+        '32': 'Espírito Santo',
+        '52': 'Goías',
+        '21': 'Maranhão',
+        '51': 'Mato Grosso',
+        '50': 'Mato Grosso do Sul',
+        '31': 'Minas Gerais',
+        '15': 'Pará',
+        '25': 'Paraíba',
+        '41': 'Paraná',
+        '26': 'Pernambuco',
+        '22': 'Piauí',
+        '33': 'Rio de Janeiro',
+        '24': 'Rio Grande do Norte',
+        '43': 'Rio Grande do Sul',
+        '11': 'Rondônia',
+        '14': 'Roraíma',
+        '42': 'Santa Catarina',
+        '35': 'São Paulo',
+        '28': 'Sergipe',
+        '17': 'Tocantins'
+    }
+
+    let options = `<option value=""> Selecione um estado </option>`
+
+    for (index in estados) {
+        options += `<option value="${index} ">${estados[index]}</option>`
+    }
+
+    $('select[name="estados"]').html(options);
+    
+    
+    $('.estados').change(function () {
+        let estado = $(this).val();
+        $('.estados').addClass('estadosDoBrasil')
+        console.log(estado);
+    })
+})
