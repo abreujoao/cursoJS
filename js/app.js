@@ -249,7 +249,53 @@ $(function () {
     
     $('.estados').change(function () {
         let estado = $(this).val();
-        $('.estados').addClass('estadosDoBrasil')
-        console.log(estado);
+        //addClass adiciona uma classe ao elemento
+        $(this).addClass('estadosDoBrasil');
+        // attr adiciona atributos ao elemento html
+        // $(this).attr('data-id',10);
+        // //ler o valor de um atributo 
+        // var nomeSelect = $(this).attr('data-desc');
+        // alert(nomeSelect);
+        // //verificar se uma classe existe no elemento
+        // var existeClass = $(this).hasClass('estados');
+        // alert(existeClass)
+        //injetar conteudo dentro de um elemento (textos, tags)
+        //${variavel} > chamar variavel dentro de string literal com craze
+        let seletor = '.preencher';
+        $(seletor).html(`O estado selecionado é ${estado}`);
+        
+        //remover atributo de um elemento
+        $(this).removeAttr('data-desc');
+
+        //remover uma classe específica
+        // $('.preencher').removeClass('vermelho')
+        $('.preencher').toggleClass(['vermellho', 'verde']);
+
+        //trocar/adicionar propriedades css em um elemento
+        $('h1').css({
+            'background-color':'yellow',
+            'font-size': '50px' 
+            
+        })
+
+        //crntrolar altura de yum elemento
+        $('.preencher').heigth(150)
+
+        
     })
+    //rolar para um determinado ponto
+    $('.goTop').click(function(){
+        $(seletor).scrollTop(0);
+        return false;
+    })
+   
+
+    //trocar cor a cada um segundo 
+    // setInterval(()=>{
+    //     $('.preencher').toggleClass(['vermelho','verde'])
+    // },500);
+
+    // setInterval(function(){)
+    //  // codigo
+    // }, 1000)
 })
