@@ -207,95 +207,162 @@ v2 = 30;
 //JQUERY    
 
 //inicializando jquery 
-$(function () {
-    var estados = {
-        '12': 'Acre',
-        '27': 'Alagoas',
-        '16': 'Amapá',
-        '13': 'Amazonas',
-        '29': 'Bahia',
-        '23': 'Ceará',
-        '53': 'Distrito Federal',
-        '32': 'Espírito Santo',
-        '52': 'Goías',
-        '21': 'Maranhão',
-        '51': 'Mato Grosso',
-        '50': 'Mato Grosso do Sul',
-        '31': 'Minas Gerais',
-        '15': 'Pará',
-        '25': 'Paraíba',
-        '41': 'Paraná',
-        '26': 'Pernambuco',
-        '22': 'Piauí',
-        '33': 'Rio de Janeiro',
-        '24': 'Rio Grande do Norte',
-        '43': 'Rio Grande do Sul',
-        '11': 'Rondônia',
-        '14': 'Roraíma',
-        '42': 'Santa Catarina',
-        '35': 'São Paulo',
-        '28': 'Sergipe',
-        '17': 'Tocantins'
-    }
+$(function(){
 
-    let options = `<option value=""> Selecione um estado </option>`
+	var estados = {   
+		'12': 'Acre',
+		'27': 'Alagoas',
+		'16': 'Amapá',
+		'13': 'Amazonas',
+		'29': 'Bahia',
+		'23': 'Ceará',
+		'53': 'Distrito Federal',
+		'32': 'Espírito Santo',
+		'52': 'Goías',
+		'21': 'Maranhão',
+		'51': 'Mato Grosso',
+		'50': 'Mato Grosso do Sul',
+		'31': 'Minas Gerais',
+		'15': 'Pará',
+		'25': 'Paraíba',
+		'41': 'Paraná',
+		'26': 'Pernambuco',
+		'22': 'Piauí',
+		'33': 'Rio de Janeiro',
+		'24': 'Rio Grande do Norte',
+		'43': 'Rio Grande do Sul',
+		'11': 'Rondônia',
+		'14': 'Roraíma',
+		'42': 'Santa Catarina',
+		'35': 'São Paulo',
+		'28': 'Sergipe',
+		'17': 'Tocantins'
+	}
 
-    for (index in estados) {
-        options += `<option value="${index} ">${estados[index]}</option>`
-    }
+	let options = `<option value="">Selecione um estado</option>`
 
-    $('select[name="estados"]').html(options);
-    
-    
-    $('.estados').change(function () {
-        let estado = $(this).val();
-        //addClass adiciona uma classe ao elemento
-        $(this).addClass('estadosDoBrasil');
-        // attr adiciona atributos ao elemento html
-        // $(this).attr('data-id',10);
-        // //ler o valor de um atributo 
-        // var nomeSelect = $(this).attr('data-desc');
-        // alert(nomeSelect);
-        // //verificar se uma classe existe no elemento
-        // var existeClass = $(this).hasClass('estados');
-        // alert(existeClass)
-        //injetar conteudo dentro de um elemento (textos, tags)
-        //${variavel} > chamar variavel dentro de string literal com craze
-        let seletor = '.preencher';
-        $(seletor).html(`O estado selecionado é ${estado}`);
-        
-        //remover atributo de um elemento
-        $(this).removeAttr('data-desc');
+	for(index in estados){
+		options += `<option value="${index}">${estados[index]}</option>`;
+	}
 
-        //remover uma classe específica
-        // $('.preencher').removeClass('vermelho')
-        $('.preencher').toggleClass(['vermellho', 'verde']);
+	$('select[name="estados"]').html(options);
 
-        //trocar/adicionar propriedades css em um elemento
-        $('h1').css({
-            'background-color':'yellow',
-            'font-size': '50px' 
-            
-        })
+	
+	$('.estados').change(function(){
+		let estado = $(this).val();
 
-        //crntrolar altura de yum elemento
-        $('.preencher').heigth(150)
+		//addClass adiciona uma classe ao elemento
+		// $(this).addClass('estadosDoBrasil');
 
-        
-    })
-    //rolar para um determinado ponto
+		//attr adiciona atributos ao elemento html
+		// $(this).attr('data-id',10)
+
+		//ler o valor de um atributo
+		// var nomeSelect = $(this).attr('data-desc');
+		// alert(nomeSelect);
+
+		//verificar se uma classe existe no elemento
+		// var existeClass = $(this).hasClass('estadosBrasileiros');
+		// alert(existeClass)
+
+		//atribuindo um seletor em uma variável
+		// let seletor = '.preencher';
+		
+		//injetar conteúdo dentro de um elemento (textos, tags)
+		// ${variavel}  > chamar variável dentro de string literal com craze
+		// $(seletor).html(`O estado selecionado é ${estados[estado]}`);
+
+		// //remover atributo de um elemento
+		// $(this).removeAttr('data-desc');
+
+		//remover uma classe específica
+		// $('.preencher').removeClass('vermelho')
+
+		//trocar classe no elemento
+		// $('.preencher').toggleClass(['vermelho', 'verde'])
+
+		//trocar/adicionar propriedades css em um elemento
+		// $('h1').css({
+		// 	'background-color' : 'yellow',
+		// 	'font-size' : '50px'
+		// })
+
+		//controlar altura de um elemento
+		// $('.preencher').height(150)
+		// $('.preencher').delay(1000).animate({
+		// 	'height': '150px',
+		// 	'opacity': '0'
+		// }, 1000, 'swing')
+
+		// $('.preencher').fadeTo('slow',0.5,function(){
+		// 	$(this).delay(2000).fadeTo('slow',1)
+		// });
+
+        // $('.preencher').hide();
+
+	})
+	
+	//rolar para um determinado ponto
+	// $('.goTop').click(function(){
+	// 	$(document).scrollTop(400);
+	// 	return false;
+	// })
+
+	//trocar cor a cada 1 segundo
+	// setInterval(() => {
+	// 	$('.preencher').toggleClass(['vermelho', 'verde'])
+	// }, 300);
+
+	// setInterval(function(){
+	// 	//codigo
+	// }, 1000)
+
+    // mascarar campos com o plugin
+    $('input[name="data"]').mask('00/00/0000') // nao pode ter espaco de jeito nenhum
+
+    //mascara para telefine fixo ou celular 
+    var SPMaskBehavior = function (val) {
+        return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+      },
+      spOptions = {
+        onKeyPress: function(val, e, field, options) {
+            field.mask(SPMaskBehavior.apply({}, arguments), options);
+          }
+      };
+      
+      $('input[name="telefone"]').mask(SPMaskBehavior, spOptions);
+
+      // var condicao  = (2 == 2) ? true : false ; if ternario ele passa valores para variaveis
+
+      // scrool animado 
+      
     $('.goTop').click(function(){
-        $(seletor).scrollTop(0);
+
+        $('.preencher').animatescroll({
+            scrollSpeed:1500,
+            easing:'easeOutBack'
+          });
+
         return false;
     })
-   
+    
+    $('.estados').change(function(){
+            let estado=$(this).val();
+            let carregaCidades = '<option value="">Selecione uma cidade</option>';
 
-    //trocar cor a cada um segundo 
-    // setInterval(()=>{
-    //     $('.preencher').toggleClass(['vermelho','verde'])
-    // },500);
+        $.ajax({
+            url : `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estado}/municipios`,
+            method : 'GET',
+            dataType : 'JSON',
+            success : function(data){
 
-    // setInterval(function(){)
-    //  // codigo
-    // }, 1000)
+                for (index in data){
+                    carregaCidades += `<option value="${data[index].nome}">${data[index].nome}</option>`;
+
+                }
+                $('.cidades').html(carregaCidades);
+            }
+        })
+    })
+
 })
